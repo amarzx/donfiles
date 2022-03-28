@@ -7,7 +7,7 @@ super + Return
 	xfce4-terminal
 
 # program launcher
-super + @space
+super + d
 	rofi -show run
 
 # make sxhkd reload its configuration files:
@@ -118,7 +118,7 @@ super + alt + shift + {h,j,k,l}
 
 # move a floating window
 super + {Left,Down,Up,Right}
-	bspc node -v {-20 0,0 20,0 -20,20 0}
+	bspc node -v {-20 0,0 20,0 -20,20 0} 
 
 #Volume Control
 XF86AudioLowerVolume
@@ -128,4 +128,11 @@ XF86AudioRaiseVolume
 XF86AudioMute
         amixer set Master toggle
 
+#brightness
+XF86MonBrightness{Up,Down}
 
+brightnessctl s 10{+,-}
+
+# lockscreen
+alt + shift + x
+    betterlockscreen -l dim
